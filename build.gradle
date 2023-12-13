@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '2.2.2.RELEASE'
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'org.sonarqube' version '10.3'
 }
 
 group 'com.example'
@@ -11,6 +12,16 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+}
+
+sonarqube {
+    properties {
+        property 'sonar.host.url', 'http://10.2.98.167:9000/'
+        property 'sonar.login', 'squ_a52157714cae0619cf0fd995f00d681da140a170'
+        property 'sonar.projectKey', 'JavaApp'
+        property 'sonar.projectName', 'JavaApp'
+        // Add any additional SonarQube properties as needed
+    }
 }
 
 dependencies {
